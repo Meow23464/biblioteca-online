@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>📚 Biblioteca Familiar 📚</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="titulo">📚 Biblioteca Familiar 📚</h1>
+
+  <input type="text" id="buscador" placeholder="Buscar libros por nombre o autor...">
+  <div id="sugerencias"></div>
+
+  <div id="generos-container"></div>
+  <div id="libros-container"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js" type="module"></script>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
