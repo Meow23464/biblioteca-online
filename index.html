@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>📚 Biblioteca Familiar 📚</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="titulo">📚 Biblioteca Familiar 📚</h1>
+    <header>
+        <h1>Bienvenido a la Biblioteca</h1>
+    </header>
 
-  <input type="text" id="buscador" placeholder="Buscar libros por nombre o autor...">
-  <div id="sugerencias"></div>
+    <div id="generos-container"></div> <!-- Contenedor para los botones de géneros -->
 
-  <div id="generos-container"></div>
-  <div id="libros-container"></div>
+    <div id="libros-container"></div> <!-- Contenedor para los libros -->
 
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js" type="module"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js" type="module"></script>
-  <script src="script.js" type="module"></script>
+    <!-- Modal de Confirmación para Borrar -->
+    <div id="modal-confirmacion" style="display: none;">
+        <div class="modal-contenido">
+            <h3>¿Estás seguro de que deseas borrar este libro?</h3>
+            <button id="confirmar-eliminar">Confirmar</button>
+            <button id="cancelar-eliminar">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal para Crear/Editar Libro -->
+    <div id="modal-edicion" style="display: none;">
+        <div class="modal-contenido">
+            <h3 id="modal-titulo">Agregar un libro</h3>
+            <form id="formulario-libro">
+                <input type="text" id="nombre" placeholder="Nombre del libro" required>
+                <input type="text" id="autor" placeholder="Autor" required>
+                <input type="number" id="año" placeholder="Año de publicación" required>
+                <input type="text" id="genero" placeholder="Género" required>
+                <input type="checkbox" id="esta_siendoleido"> ¿Está siendo leído?
+                <input type="text" id="lector_actual" placeholder="Lector actual (opcional)">
+                <button type="submit">Guardar</button>
+                <button type="button" id="cancelar-edicion">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
